@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Video Stream</title>
+<link rel="stylesheet" href="server.css">
+</head>
+<body>
+<div class="container" id="loginBox">
+<h2>🔒 Login</h2>
+<input type="text" id="username" placeholder="Username" value="admin">
+<input type="password" id="password" placeholder="Password">
+<button onclick="connect()" style="background:#007bff;width:100%;padding:12px;margin-top:10px;">Login</button>
+<p id="errorMsg" style="color:#ff5252;display:none;">Invalid login or password</p>
+</div>
+<div class="container" id="broadcasterBox" style="display:none;">
+<h3>📡 Active Broadcasters</h3>
+<select id="broadcasterSelect" onchange="switchBroadcaster()" style="padding:8px;background:#2d2d2d;color:#fff;border:1px solid #333;border-radius:4px;width:80%;">
+<option value="">-- Select broadcaster --</option>
+</select>
+</div>
+<div class="container" id="streamBox" style="display:none;">
+<h2>📹 Live Stream (H.264)</h2>
+<p class="status" id="statusText">Waiting for video stream...</p>
+<video id="videoPlayer" autoplay muted playsinline></video>
+<div class="row">
+  <button id="soundBtn" onclick="toggleSound()" style="background:#28a745;display:none;">Enable Sound</button>
+  <label>Quality:
+    <select id="qualitySel" onchange="sendQuality()">
+      <option value="1280,720,30">1280x720@30</option>
+      <option value="960,540,24">960x540@24</option>
+      <option value="640,360,15">640x360@15</option>
+    </select>
+  </label>
+  <label>Sound:
+    <select id="audioSel" onchange="sendAudio()">
+      <option value="system">System</option>
+      <option value="mic">Microphone</option>
+      <option value="off">Off</option>
+    </select>
+  </label>
+  <button onclick="exitToBroadcasters()">Exit</button>
+</div>
+</div>
+<script src="server.js"></script>
+</body>
+</html>
