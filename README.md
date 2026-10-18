@@ -1,4 +1,3 @@
-```markdown
 # 🕵️ NoRootSpy
 
 > ⚠️ **ВНИМАНИЕ / WARNING**
