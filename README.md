@@ -108,7 +108,7 @@ The architecture consists of three components:
 │  (Broadcaster)   │   /ws/broadcast          │   (Relay)        │
 │                  │   H.264+AAC / MP4-frag   │                  │
 │  mss → cv2 →    │                          │  ┌──────────────┐│
-│  PyAV → WS      │                          │  │ HTTP :8080   ││
+│  PyAV → WS      │                          │  │ HTTP :8081   ││
 └──────────────────┘                          │  │ (Web UI)     ││
                                               │  └──────────────┘│
                                               │                  │
@@ -201,7 +201,7 @@ ENABLE_AUDIO    = True       # звук
 
 ### 3. Просмотр в браузере / Viewing in Browser
 
-1. Откройте `http://<SERVER_IP>:8080`
+1. Откройте `http://<SERVER_IP>:8081`
 2. Введите логин и пароль (по умолчанию `admin` / `admin`)
 3. Выберите вещателя из списка
 4. Нажмите **Enable Sound**, если нужен звук
@@ -213,7 +213,7 @@ ENABLE_AUDIO    = True       # звук
 В начале `server.py` задаются ключевые параметры:
 
 ```python
-HTTP_PORT       = 8080
+HTTP_PORT       = 8081
 WS_PORT         = 8765
 ADMIN_USER      = "admin"
 ADMIN_PASS      = "admin"
@@ -299,4 +299,3 @@ NoRootSpy/
 > Проект создан **для обучения**. Не используйте его для слежки, несанкционированного наблюдения или любых действий, нарушающих закон и права других людей.
 >
 > This project is for **educational purposes only**. Do not use it for surveillance, unauthorized monitoring, or any actions that violate the law or the rights of others.
-```
